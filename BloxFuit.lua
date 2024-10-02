@@ -27,3 +27,15 @@ local Window = Rayfield:CreateWindow({
 })
 
 local PlayerTab = Window:CreateTab("Player", 106444352314041) -- Title, Image
+
+local Slider = PlayerTab:CreateSlider({
+   Name = "Walk Speed",
+   Range = {10, 100},
+   Increment = 1,
+   Suffix = "Speed",
+   CurrentValue = 10,
+   Flag = "Slider1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+   
+   end,
+})
