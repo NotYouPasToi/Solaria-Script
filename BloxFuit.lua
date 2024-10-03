@@ -114,9 +114,5 @@ if game.PlaceId == 2753915549 then
     end
 
 else
-    Rayfield:Notify({
-        Title = "Mauvais Jeu!",
-        Content = "Le Jeu N'est Pas Blox Fruits! Ou Alors Il Y A Un Probleme (Merci De Nous Contacter Sur Discord)",
-        Duration = 5,
-    })
+Rayfield:Destroy()
 end
