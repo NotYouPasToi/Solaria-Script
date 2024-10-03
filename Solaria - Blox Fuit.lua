@@ -38,7 +38,7 @@ if game.PlaceId == 2753915549 then
     local FunTab = Window:CreateTab("Fun", nil)
 
     local Button = FarmTab:CreateButton({
-   Name = "Button Example",
+   Name = "Farm Coffre",
    Callback = function()
    loadstring(game:HttpGet("https://raw.githubusercontent.com/NotYouPasToi/Solaria-Script/refs/heads/main/TpCoffre.lua"))()
    end,
