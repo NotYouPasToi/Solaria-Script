@@ -37,13 +37,78 @@ if game.PlaceId == 2753915549 then
 
     local FunTab = Window:CreateTab("Fun", nil)
 
-    local Button = FarmTab:CreateButton({
-   Name = "Farm Coffre",
-   Callback = function()
-   loadstring(game:HttpGet("https://raw.githubusercontent.com/NotYouPasToi/Solaria-Script/refs/heads/main/TpCoffre.lua"))()
+local Toggle = Tab:CreateToggle({
+   Name = "Coffre 1",
+   CurrentValue = false,
+   Flag = "Coffre1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+                
+          _G.loop = state -- true/false
+while _G.loop do wait()
+for i,v in pairs(game:GetService("Workspace").Chest2:GetDescendants()) do
+   if v.Name == "TouchInterest" then
+       game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Parent.CFrame
+       wait(0.1)
+        end
+end 
+if state then
+        print("Toggle On")
+    else
+        print("Toggle Off")
+    end
+end)
+            
    end,
 })
-    
+
+local Toggle = Tab:CreateToggle({
+   Name = "Coffre 2",
+   CurrentValue = false,
+   Flag = "Coffre2", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+            
+       _G.loop = state -- true/false
+while _G.loop do wait()
+for i,v in pairs(game:GetService("Workspace").Chest2:GetDescendants()) do
+   if v.Name == "TouchInterest" then
+       game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Parent.CFrame
+       wait(0.1)
+   end
+end
+end 
+if state then
+        print("Toggle On")
+    else
+        print("Toggle Off")
+    end
+            
+   end,
+})
+
+local Toggle = Tab:CreateToggle({
+   Name = "Coffre 3",
+   CurrentValue = false,
+   Flag = "Coffre3", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+
+            _G.loop = state -- true/false
+while _G.loop do wait()
+for i,v in pairs(game:GetService("Workspace").Chest3:GetDescendants()) do
+   if v.Name == "TouchInterest" then
+       game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Parent.CFrame
+       wait(0.1)
+   end
+end
+end   
+    if state then
+        print("Toggle On")
+    else
+        print("Toggle Off")
+    end
+            
+   end,
+})
+
     -- Slider Player (WalkSpeed, Dash, Jump)
     PlayerTab:CreateSlider({
         Name = "WalkSpeed",
